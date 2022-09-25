@@ -1,0 +1,8 @@
+This is a timetable for a school's plasma TV.
+It is written in Golang for backend and ReactJS for frontend.
+
+Project was never finished, and has some issues that i'd not run into now.
+For example, build tags for debug/release, logrus logging library and so on.
+
+The project has an admin panel, built with MaterialUI for ReactJS.
+

@@ -1,0 +1,266 @@
+@mixin stylishtable {
+  &, tr, td, th {
+    border-collapse: collapse;
+    border: 1px solid #000;
+  }
+
+  td, th {
+    padding: 3px 5px;
+  }
+}
+
+
+.gridtable {
+  /*&:before {
+    content: ' ';
+    width: 10px;
+    height: 10px;
+    background: red;
+
+  }*/
+  display: grid;
+  grid-template-columns: repeat(150, 0.25fr); // 1/15
+  grid-template-rows: repeat(550, 2fr); // 1/49
+  //grid-gap: 10px;
+  grid-auto-flow: column dense;
+
+  > div {
+    margin-right: 5px;
+    grid-row: auto/span 10;
+    grid-column: auto/span 10;
+
+    &:nth-child(55n),
+    &:nth-child(55n-1),
+    &:nth-child(55n-2),
+    &:nth-child(55n-3),
+    &:nth-child(55n-4),
+    &:nth-child(55n-5),
+    &:nth-child(55n-6),
+    &:nth-child(55n-7),
+    &:nth-child(55n-18),
+    &:nth-child(55n-19),
+    &:nth-child(55n-20),
+    &:nth-child(55n-21),
+    &:nth-child(55n-22),
+    &:nth-child(55n-23),
+    &:nth-child(55n-24),
+    &:nth-child(55n-25),
+    &:nth-child(55n-36),
+    &:nth-child(55n-37),
+    &:nth-child(55n-38),
+    &:nth-child(55n-39),
+    &:nth-child(55n-40),
+    &:nth-child(55n-41),
+    &:nth-child(55n-42),
+    &:nth-child(55n-43),
+    {
+      background: #cacaca;
+      position: relative;
+
+      &:before {
+        content: ' ';
+        width: 5.5px;
+        height: calc(100% + 1px);
+        position: absolute;
+        right: -6px;
+        background: #cacaca;
+      }
+    }
+
+    &:not(.ttoper) {
+      border-top: 0;
+    }
+
+    &:nth-child(55n),
+    &:nth-child(55n-18),
+    &:nth-child(55n-36), {
+      &.classWeekday {
+        &:before {
+          height: 100%;
+        }
+      }
+    }
+
+    &.classWeekday {
+      &:before {
+        width: 6px;
+        right: -6px;
+      }
+    }
+  }
+
+
+  * {
+    font-size: 0.9vh;
+    //font-weight: bold;
+  }
+
+  .tableCell {
+    border: 0.5px solid #000;
+    border-collapse: collapse;
+    padding: 0 8px;
+
+    &_empty {
+      text-align: center;
+    }
+  }
+
+  .classHeader {
+    //height: 15px;
+    text-align: center;
+    position: relative;
+
+    > span {
+      position: absolute;
+      top: 100%
+    }
+  }
+
+  .stylishtable {
+    @include stylishtable;
+  }
+
+}
+
+.generator {
+  > h1 {
+    font-size: 2rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+
+  .ret-baton-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stylishtable {
+    @include stylishtable;
+  }
+
+  .geno-table {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+}
+
+
+.preloader {
+  position: fixed;
+  background: blue;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  .lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+    div {
+      animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      transform-origin: 40px 40px;
+
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #fff;
+        margin: -4px 0 0 -4px;
+      }
+
+      &:nth-child(1) {
+        animation-delay: -0.036s;
+
+        &:after {
+          top: 63px;
+          left: 63px;
+        }
+      }
+
+      &:nth-child(2) {
+        animation-delay: -0.072s;
+
+        &:after {
+          top: 68px;
+          left: 56px;
+        }
+      }
+
+      &:nth-child(3) {
+        animation-delay: -0.108s;
+
+        &:after {
+          top: 71px;
+          left: 48px;
+        }
+      }
+
+      &:nth-child(4) {
+        animation-delay: -0.144s;
+
+        &:after {
+          top: 72px;
+          left: 40px;
+        }
+      }
+
+      &:nth-child(5) {
+        animation-delay: -0.18s;
+
+        &:after {
+          top: 71px;
+          left: 32px;
+        }
+      }
+
+      &:nth-child(6) {
+        animation-delay: -0.216s;
+
+        &:after {
+          top: 68px;
+          left: 24px;
+        }
+      }
+
+      &:nth-child(7) {
+        animation-delay: -0.252s;
+
+        &:after {
+          top: 63px;
+          left: 17px;
+        }
+      }
+
+      &:nth-child(8) {
+        animation-delay: -0.288s;
+
+        &:after {
+          top: 56px;
+          left: 12px;
+        }
+      }
+    }
+  }
+
+
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
